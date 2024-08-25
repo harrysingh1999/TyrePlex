@@ -2,8 +2,8 @@ import React from 'react';
 
 const PaymentMode = () => {
   return (
-    <section id='payment' className="bg-white p-4 rounded-lg shadow-md mx-4 md:mx-8 lg:mx-16">
-      <h2 className="text-lg font-bold mb-4">Payment Mode</h2>
+    <section id='payment' className="bg-white p-4 rounded-lg shadow-md mx-8 lg:mx-16">
+      <h2 className="text-2xl md:text-3xl font-bold  mb-4">Payment Mode</h2>
       <ul className="list-none">
         <li>
           <input type="checkbox" className="mr-2" />

@@ -2,15 +2,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 md:px-8 lg:px-16">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-8 lg:space-y-0">
+    <footer className="bg-gray-900 text-white pt-8 pb-4 px-4 md:px-8 lg:px-16">
+      <div className=" mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-center space-y-8 lg:space-y-0">
         <div className="lg:w-1/3">
           <h3 className="text-lg font-bold">Have a Question About Tyres?</h3>
           <p className="mt-2">Get an answer in 24 hours from our experts.</p>
           <div className="mt-4">
             <input
               type="text"
-              className="border rounded-md p-2 w-full"
+              className="border rounded-md p-2 w-full text-black"
               placeholder="Ask or search your question"
             />
           </div>
@@ -65,8 +65,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-8 text-center border-t border-white/30 pt-2">
-        <p>© 2024 TyrePlex Technologies & Commerce Pvt. Ltd. All Rights Reserved.</p>
+      <div className="mt-8 text-xs md:text-base text-center border-t border-white/30 pt-2">
+        <p>
+          © 2024 TyrePlex Technologies & Commerce Pvt. Ltd. All Rights Reserved.
+        </p>
       </div>
     </footer>
   );

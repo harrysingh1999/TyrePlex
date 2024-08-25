@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function Card({ item, index }) {
+  // custom created Card for Reusability...
+
   return (
     <div
       key={index}

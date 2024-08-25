@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-function Header() {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -9,62 +9,58 @@ function Header() {
   };
 
   return (
-    <header className="bg-white p-4 flex justify-between items-center px-4 md:px-8 lg:px-16 relative">
+    <header className="bg-white p-4 flex justify-normal items-center md:justify-between px-4 md:px-8 lg:px-16">
       {/* Hamburger Icon */}
-      <div className="flex items-center md:hidden">
-        <div className="cursor-pointer" onClick={toggleMenu}>
-          {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </div>
+      <div className="md:hidden cursor-pointer z-20" onClick={toggleMenu}>
+        {!isMenuOpen && <FaBars size={24} />}
       </div>
 
       {/* Logo */}
-      <div
-        className={`text-2xl font-bold transition-all duration-300 ${
-          isMenuOpen && "absolute top-4 left-1/2 transform -translate-x-1/2"
-        }`}
-      >
-        TyrePlex
+      <div className={`text-2xl font-bold text-center w-full md:w-auto`}>
+        <a href="/">TyrePlex</a>
       </div>
-
-      <div className="flex-1 hidden md:block"></div>
 
       {/* Navigation Menu */}
       <nav
         className={`${
-          isMenuOpen ? "flex" : "hidden"
-        } flex-col items-center absolute top-full left-0 w-1/2 md:w-full bg-white py-4 z-10 md:flex md:flex-row md:static md:bg-transparent md:py-0`}
+          isMenuOpen
+            ? "absolute top-0 left-0 h-screen bg-white flex flex-col w-[70%] gap-6 pl-6 z-10 shadow-xl"
+            : "hidden md:flex gap-6 mt-4 md:mt-0"
+        }`}
       >
-        <ul className="flex flex-col md:flex-row gap-6 w-full md:w-auto text-center">
+        {/* Close Icon */}
+        <div className="md:hidden cursor-pointer mt-6" onClick={toggleMenu}>
+          <FaTimes size={24} />
+        </div>
+
+        <ul className="flex flex-col md:flex-row gap-5 md:mt-0">
           <li>
-            <a href="#products" className="hover:text-blue-500 block py-2">
+            <a href="#products" className="hover:text-blue-500 block">
               Tyres
             </a>
           </li>
           <li>
-            <a href="#deals-in" className="hover:text-blue-500 block py-2">
+            <a href="#deals-in" className="hover:text-blue-500 block">
               Deals In
             </a>
           </li>
           <li>
-            <a
-              href="#services-offered"
-              className="hover:text-blue-500 block py-2"
-            >
+            <a href="#services-offered" className="hover:text-blue-500 block">
               Services
             </a>
           </li>
           <li>
-            <a href="#payment" className="hover:text-blue-500 block py-2">
+            <a href="#payment" className="hover:text-blue-500 block">
               Payment
             </a>
           </li>
           <li>
-            <a href="#reviews" className="hover:text-blue-500 block py-2">
+            <a href="#reviews" className="hover:text-blue-500 block">
               Reviews
             </a>
           </li>
           <li>
-            <a href="#contactus" className="hover:text-blue-500 block py-2">
+            <a href="#contactus" className="hover:text-blue-500 block">
               Contact Us
             </a>
           </li>
@@ -72,6 +68,6 @@ function Header() {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

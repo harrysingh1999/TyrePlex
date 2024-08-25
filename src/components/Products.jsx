@@ -5,6 +5,10 @@ function Products() {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
+  {
+    /* prodcuts Array is used here to filter its items based on the user event, which is imported from Constant.js file */
+  }
+
   const filteredProducts = products.filter(
     (product) =>
       (filter === "all" || product.type === filter) &&
@@ -12,9 +16,9 @@ function Products() {
   );
 
   return (
-    <section id="products" className="mb-8 mx-4 md:mx-8 lg:mx-16">
-      <h2 className="text-3xl font-bold mb-6">Tyres Available</h2>
-      <div className="mb-4 flex flex-col md:flex-row justify-between items-center">
+    <section id="products" className="mb-8 mx-8 lg:mx-16">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6">Tyres Available</h2>
+      <div className="mb-4 flex flex-col md:flex-row justify-between md:items-center">
         <div className="mb-4 md:mb-0 md:w-1/3">
           <label htmlFor="search" className="font-semibold mr-2">
             Search:
